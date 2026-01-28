@@ -147,10 +147,10 @@ export function ArtworkDetail({
                     alt={artwork.title}
                     className={`max-w-full max-h-full object-contain transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     onLoad={() => setImageLoaded(true)}
-                    onError={(e) => {
-                      console.error('Image failed to load:', artwork.imageUrl);
-                      setImageLoaded(true); // Show even if failed
-                    }}
+                    onError={() => {
+  console.error('Image failed to load:', artwork.imageUrl);
+  setImageLoaded(true);
+}}
                   />
                 ) : (
                   <div className="w-64 h-64 bg-gray-700 rounded-lg flex items-center justify-center">
